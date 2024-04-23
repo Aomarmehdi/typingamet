@@ -48,7 +48,7 @@ if (isset($_POST['signIn'])){
 </head>
 <body>
   <header>
-    <a href="../index.html" class="aa">
+    <a href="../index.php" class="aa">
       <div class="icon"><i class="fa-solid fa-gamepad"></i></div>
       <h1 class="text">
         TYPINGAME
