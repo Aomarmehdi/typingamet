@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --bgColor: #323437;
+  --textPrimary: #fff;
+  --textSecondary: #666;
+  --primaryColor: #fd4;
+  --font: "Roboto Mono", "Roboto Mono", "Vazirmatn", monospace;
+  --roundness: .5rem; 
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bgColor);
+  font-size: 1.4rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  width: 200px;
+}
+
+.user-logo {
+  width: 20px;
+}
+
+.fa-user {
+  color: #666;
+  padding: 20px;
+}
+
+.fa-user:hover {
+  color: #D1D0C5;
+}
+
+/* ---------------------------------------- */
+
+::selection {
+  background-color: #e2b714;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  /* grid-auto-flow: column; */
+  /* gap: 1rem; */
+  /* height: 100%; */
+  flex-wrap: wrap;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240px;
+  height: 284px;
+}
+
+input,
+button {
+  background: #2c2e31;
+  padding: 8px;
+  font-size: 16px;
+  font-family: var(--font);
+  width: 100%;
+  outline: none;
+  border: none;
+  margin-bottom: 6px;
+  border-radius: var(--roundness);
+  color: #D1D0C5;
+}
+
+input:focus {
+  border: 2px solid #d1d0c5;
+}
+
+button {
+  color: #d1d0c5;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d0cfc5;
+  color: #323437;
+}
+
+.title {
+  font-family: var(--font);
+  color: #D1D0C5;
+  width: 240px;
+  margin-bottom: 7px;
+  font-size: 16px;
+  display: block;
+  cursor: default;
+}
+
+.top-left {
+  text-decoration: none;
+  color: #D1D0C5;
+  padding-left: 1px;
+}
+
+.icon {
+  display: inline-block;
+  text-decoration: none;
+  color: #e2b714;
+  font-size: 30px;
+}
+
+.text {
+  display: inline-block;
+  text-decoration: none;
+  color: #D1D0C5;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 2rem;
+  font-weight: unset;
+  unicode-bidi: isolate;
+}
+
+.aa {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.text::selection {
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* main {
+  display: grid;
+} */
