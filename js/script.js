@@ -137,6 +137,7 @@ document.addEventListener('keydown', (ev) => {
       if ( expected !== ' ') {
         const letterToInavalidate = [...document.querySelectorAll('.word.current .letter:not(.correct)')];
         letterToInavalidate.forEach(letter =>{
+          mistakes += 1 ;
           addClass(letter, 'incorrect');
         })
       }
