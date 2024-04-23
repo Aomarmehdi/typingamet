@@ -182,24 +182,12 @@ if (currentLetter && isFirstLetter && !isCtrl){
   
 // ctrl + Backspace 
 const children = [...currentWord.children]; 
-if (ev.ctrlKey && isBackspace){
-  console.log(children)
-  children.filter((element) => {
-    if (cpm > 0){
-    if(element.classList.contains('correct')){  cpm -= 1 }
-    } else if ( mistakes > 0 ) {
-      if(element.classList.contains('incorrect')) {
-        mistakes -= 1 ;
-      }
-    }
-  })
-  if (currentWord.firstChild.classList.contains('current')){
-    if (mistakes > 0 ) 
-    mistakes -= currentWord.length;
-    if (cpm > 0)
-    cpm -= currentWord.length;
-  addClass(currentWord.previousSibling, 'current');
-  addClass(currentWord.previousSibling.firstChild, 'current');
+  if (ev.ctrlKey && isBackspace){
+    if (currentWord.firstChild.classList.contains('current')){
+      removeClass(currentLetter, 'current');
+      removeClass(currentWord, 'current');
+      addClass(currentWord.previousSibling, 'current');
+      addClass(currentWord.previousSibling.firstChild, 'current');
       let childrenFirstLetter = [...currentWord.previousSibling.children];
       for (let i = 0; i <childrenFirstLetter.length; i++){
         removeClass(childrenFirstLetter[i], 'incorrect');
@@ -215,7 +203,7 @@ if (ev.ctrlKey && isBackspace){
         removeClass(children[i], 'incorrect');
         removeClass(children[i], 'correct');
       }
-      // addClass(children[0], 'current');
+      addClass(children[0], 'current');
     }
   }
 }
