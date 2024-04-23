@@ -127,7 +127,7 @@ document.addEventListener('keydown', (ev) => {
     } else {
       const incorrectLetter = document.createElement('span');
       incorrectLetter.innerHTML = key;
-      incorrectLetter.className = 'letter incorrect extra';
+      incorrectLetter.className = 'letter incorrect extra ';
         currentWord.appendChild(incorrectLetter);
         mistakes += 1;
       }
@@ -157,9 +157,10 @@ document.addEventListener('keydown', (ev) => {
   if (cpm > 0 && currentWord.previousElementSibling.lastElementChild.classList.contains('correct') )
   cpm -=1;
   } else {
-    if (mistakes > 0 &&  currentLetter.previousElementSibling.classList.contains('incorrect') ) 
+    // if (currentWord.lastElementChild.classList.contains('extra'))
+    if (mistakes > 0 &&  currentWord.lastElementChild.previousElementSibling.classList.contains('incorrect') ) 
   mistakes -= 1;
-  if (cpm > 0 && currentLetter.previousElementSibling.classList.contains('correct') )
+  if (cpm > 0 && currentWord.lastElementChild.previousElementSibling.classList.contains('correct') )
   cpm -=1;
   }
 if (currentLetter && isFirstLetter && !isCtrl){
