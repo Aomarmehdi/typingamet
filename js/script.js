@@ -148,12 +148,19 @@ document.addEventListener('keydown', (ev) => {
     }
     addClass(currentWord.nextSibling.firstChild, 'current');
   }
-
-if (isBackspace) {
-  if (mistakes > 0 ) 
+  if (isBackspace) {
+  // console.log(currentLetter.previousElementSibling.classList.contains('incorrect'))
+  if(isFirstLetter) {
+  if (mistakes > 0 &&  currentWord.previousElementSibling.lastElementChild.classList.contains('incorrect') ) 
   mistakes -= 1;
-if (cpm > 0)
-cpm -=1;
+  if (cpm > 0 && currentWord.previousElementSibling.lastElementChild.classList.contains('correct') )
+  cpm -=1;
+  } else {
+    if (mistakes > 0 &&  currentLetter.previousElementSibling.classList.contains('incorrect') ) 
+  mistakes -= 1;
+  if (cpm > 0 && currentLetter.previousElementSibling.classList.contains('correct') )
+  cpm -=1;
+  }
 if (currentLetter && isFirstLetter && !isCtrl){
   if(!isFirstWord) 
   removeClass(currentWord, 'current');
@@ -181,31 +188,31 @@ if (currentLetter && isFirstLetter && !isCtrl){
   }
   
 // ctrl + Backspace 
-const children = [...currentWord.children]; 
-  if (ev.ctrlKey && isBackspace){
-    if (currentWord.firstChild.classList.contains('current')){
-      removeClass(currentLetter, 'current');
-      removeClass(currentWord, 'current');
-      addClass(currentWord.previousSibling, 'current');
-      addClass(currentWord.previousSibling.firstChild, 'current');
-      let childrenFirstLetter = [...currentWord.previousSibling.children];
-      for (let i = 0; i <childrenFirstLetter.length; i++){
-        removeClass(childrenFirstLetter[i], 'incorrect');
-        removeClass(childrenFirstLetter[i], 'correct');
-      }
-      addClass(children[0], 'current')
-    } else {
-      for (let i = 0; i <children.length; i++){
-        if (children[i].classList.contains('extra')) {
-          children[i].remove();
-        }
-        removeClass(children[i],'current');
-        removeClass(children[i], 'incorrect');
-        removeClass(children[i], 'correct');
-      }
-      addClass(children[0], 'current');
-    }
-  }
+// const children = [...currentWord.children]; 
+//   if (ev.ctrlKey && isBackspace){
+//     if (currentWord.firstChild.classList.contains('current')){
+//       removeClass(currentLetter, 'current');
+//       removeClass(currentWord, 'current');
+//       addClass(currentWord.previousSibling, 'current');
+//       addClass(currentWord.previousSibling.firstChild, 'current');
+//       let childrenFirstLetter = [...currentWord.previousSibling.children];
+//       for (let i = 0; i <childrenFirstLetter.length; i++){
+//         removeClass(childrenFirstLetter[i], 'incorrect');
+//         removeClass(childrenFirstLetter[i], 'correct');
+//       }
+//       addClass(children[0], 'current')
+//     } else {
+//       for (let i = 0; i <children.length; i++){
+//         if (children[i].classList.contains('extra')) {
+//           children[i].remove();
+//         }
+//         removeClass(children[i],'current');
+//         removeClass(children[i], 'incorrect');
+//         removeClass(children[i], 'correct');
+//       }
+//       addClass(children[0], 'current');
+//     }
+//   }
 }
 
 // // move lines / words
