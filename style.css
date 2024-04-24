@@ -129,7 +129,7 @@ div.word {
   height: 1.6rem;
   background: var(--yallow);
   position: fixed;
-  top: 290px;
+  top: 325px;
   animation: blink 1s infinite;
 }
 /* 

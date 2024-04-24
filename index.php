@@ -53,7 +53,7 @@ session_start();
 
     <main>
       <div id="header">
-        <!-- <div id="info">30</div> -->
+        <div id="info">30</div>
       </div>
       <div id="game" tabindex="0">
         <div id="words"></div>
