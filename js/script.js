@@ -74,7 +74,8 @@ let mistakes = 0 ;
 let cpm = 0
 
 document.addEventListener('keydown', (ev) => {
-  document.querySelector("#testConfig").style.opacity = 0 ;
+  document.querySelector("#modes").style.opacity = 0;
+  document.querySelector("#testConfig").style.opacity = 0;
   console.log(ev)
   const key = ev.key;
   const currentWord = document.querySelector(".word.current");

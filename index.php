@@ -10,31 +10,38 @@ session_start();
     <link rel="stylesheet" href="style.css"/>
     <link rel="shortcut icon" href="./images/gamepad-solid.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
   </head>
   <body>
-
+    
     <header>
       <a href="./index.php" class="aa">
         <div class="icon"><i class="fa-solid fa-gamepad"></i></div>
         <h1 class="text">TYPINGAME</h1>
       </a>
-      <a href="./signup/index.php">
-        <?php
-        if (isset($_SESSION['user-name'])){
-        $r = $_SESSION['user_name'];
-        echo $r;
-        }
-        ?> 
+      <a href="./signup/index.php" class="username-db">
         <i class="fa-regular fa-user fa-sm"></i>
+        <a href="./statistics.php" id="stats">
+          <?php
+            $r = $_SESSION['user_name']; echo $r;
+          ?> 
+        </a>
       </a>
     </header>
-    <div id="testConfig">
+    
+    <div id="modes">
       <div class="row">
         <div class="mode">
           <div class="textButton first">random</div>
-          <div class="textButton">paragraph</div>
+          <div class="textButton">@punctuation</div>
+          <div class="textButton">numbers</div>
         </div>
-        <div class="seperator">&nbsp;|&nbsp;</div>
+      </div>
+    </div>
+
+    <div id="testConfig">
+      <div class="row">
         <div class="time">
           <div class="textButton" timeconfig="15"><span>15</span></div>
           <div class="textButton" timeconfig="30"><span>30</span></div>
