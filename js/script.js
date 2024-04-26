@@ -10,6 +10,8 @@ document.querySelector(".time").addEventListener("click", (e) => {
   newGame()
   document.querySelector("#info").innerHTML = e.target.innerHTML;
     localStorage.setItem("time" ,e.target.innerHTML);
+  window.location.reload();
+
 })
 
 
@@ -145,6 +147,7 @@ document.querySelector(".content").style.opacity = 1;
 
 
 document.addEventListener('keydown', (ev) => {
+
   document.querySelector("#modes").style.visibility = "hidden";
   document.querySelector("#testConfig").style.visibility = "hidden";
   console.log(ev)
