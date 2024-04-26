@@ -92,7 +92,7 @@ function getMistakes() {
       mistakes += 1;
     }
   })
-  console.log(mistakes)
+  return mistakes
 }
 
 function getCpm() {
@@ -108,7 +108,7 @@ function getCpm() {
       cpm += 1;
   }
 })
-console.log(cpm)
+return cpm
 }
 
 function getWpm() {
@@ -132,15 +132,21 @@ function gameOver() {
   const result = getWpm();
   // console.log({result})
   document.getElementById("cursor").style.display = "none"
-  document.getElementById('info').innerHTML = ` WPM:${result}`;
+document.querySelector(".content").style.opacity = 0;
+  document.getElementById('info').style.opacity = 0 ;
+document.querySelector(".content").style.opacity = 1;
+  document.querySelector(".temps").lastElementChild.innerHTML = localStorage.getItem("time");
+  document.querySelector(".mistake").lastElementChild.innerHTML = getMistakes();
+  document.querySelector("#wpm").lastElementChild.innerHTML = result
+  document.querySelector(".cpm").lastElementChild.innerHTML = getCpm();
   // console.log(getMistakes());
   // console.log(getCpm());
-}
+}g
 
 
 document.addEventListener('keydown', (ev) => {
   document.querySelector("#modes").style.opacity = 0;
-  document.querySelector("#testConfig").style.opacity = 0;
+  document.querySelector("#testConfig").style.opacity = 1;
   console.log(ev)
   const key = ev.key;
   const currentWord = document.querySelector(".word.current");
