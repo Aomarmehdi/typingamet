@@ -24,7 +24,9 @@ session_start();
       <a href="./signup/index.php"><i class="fa-regular fa-user fa-sm"></i></a>
         <a href="./statistics.php" id="stats">
           <?php
-            $r = $_SESSION['user_name']; echo $r;
+            if (isset($r)) {
+              $r = $_SESSION['user_name']; echo $r;
+            }
           ?> 
         </a>
     </div>
