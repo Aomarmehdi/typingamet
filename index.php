@@ -21,13 +21,13 @@ session_start();
       <h1 class="text">TYPINGAME</h1>
     </a>
     <div class="username-db">
-      <a href="./signup/index.php"><i class="fa-regular fa-user fa-sm"></i></a>
+      
         <a href="./statistics.php" id="stats">
-          <?php
-            if (isset($r)) {
-              $r = $_SESSION['user_name']; echo $r;
-            }
-          ?> 
+          <?php if(isset($_SESSION['user_name'])) {?>
+            <div class="float-end"><a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a><a href="./statistics.php" class="username-db"><?= $_SESSION['user_name']?></a></div>
+            <?php } else {?>
+            <a href="./signup/index.php"><i class="fa-regular fa-user fa-sm"></i></a>
+            <?php }?>
         </a>
     </div>
   </header>
