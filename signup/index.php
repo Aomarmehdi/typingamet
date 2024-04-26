@@ -24,7 +24,7 @@ if (isset($_POST['signIn'])){
     if($result) {
       if ($result && mysqli_num_rows($result) > 0){
         $user_data = mysqli_fetch_assoc($result);
-        if($user_data ['passwrod'] === $passwords) {
+        if($user_data ['password'] === $password) {
           $_SESSION['user_id'] = $user_data['user_id'];
           $_SESSION['user_name'] = $user_data['user_name']; 
           echo $_SESSION['user_name'];  
