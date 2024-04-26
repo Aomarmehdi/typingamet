@@ -40,7 +40,7 @@ session_start();
           newGame();
           // a = localStorage.getItem('a') === 'false' ? a = false : a = true
           "
-           id = "numbers">numbers</div>
+          id = "numbers">numbers</div>
         </div>
       </div>
     </div>
