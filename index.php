@@ -20,16 +20,16 @@ session_start();
         <div class="icon"><i class="fa-solid fa-gamepad"></i></div>
         <h1 class="text">TYPINGAME</h1>
       </a>
-      <a href="./signup/index.php" class="username-db">
-        <a href="./statistics.php" id="stats">
-          <i class="fa-regular fa-user fa-sm"></i>
+      <div class="username-db">
+        <a href="./signup/index.php"><i class="fa-regular fa-user fa-sm"></i></a>
+          <a href="./statistics.php" id="stats">
             <?php
               $r = $_SESSION['user_name']; echo $r;
             ?> 
           </a>
-      </a>
+      </div>
     </header>
-
+    
     <div id="modes">
       <div class="row">
         <div class="mode">
