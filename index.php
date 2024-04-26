@@ -35,7 +35,11 @@ session_start();
         <div class="mode">
           <div class="textButton first">random</div>
           <div class="textButton">@punctuation</div>
-          <div class="textButton">numbers</div>
+          <div class="textButton" onclick="(a==false) ? a = true: a = false;
+          newGame();
+
+          a==false ? textColorO() :textColorY();
+          " id="numbers">numbers</div>
         </div>
       </div>
     </div>
