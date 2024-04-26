@@ -141,7 +141,7 @@ document.querySelector(".content").style.opacity = 1;
   document.querySelector(".cpm").lastElementChild.innerHTML = getCpm();
   // console.log(getMistakes());
   // console.log(getCpm());
-}
+}g
 
 
 document.addEventListener('keydown', (ev) => {
