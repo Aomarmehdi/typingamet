@@ -52,9 +52,7 @@ if (isset($_POST['signIn'])){
   <header>
     <a href="../index.php" class="aa">
       <div class="icon"><i class="fa-solid fa-gamepad"></i></div>
-      <h1 class="text">
-        TYPINGAME
-      </h1>
+      <h1 class="text">TYPINGAME</h1>
     </a>
     <a href="index.php"><i class="fa-regular fa-user fa-sm"></i></a>
   </header>

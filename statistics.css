@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bgColor: #323437;
+  --textPrimary: #fff;
+  --textSecondary: #666;
+  --primaryColor: #fd4;
+  --yallow: #e2b714;
+  --sub-alt-color: #2c2e31;
+  --roundness: .5rem;
+  --font: "Roboto Mono", "Roboto Mono", "Vazirmatn", monospace;
+  --text-color: #d1d0c5;
+}
+
+body {
+  background-color: var(--bgColor);
+  font-size: 1.4rem;
+  font-family: var(--font);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.icon {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--yallow);
+  font-size: 30px;
+}
+
+.text {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 2rem;
+  font-weight: unset;
+  unicode-bidi: isolate;
+}
+
+.aa {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  width: 200px;
+}
+
+.user-logo {
+  width: 20px;
+}
+
+.fa-right-from-bracket {
+  color: var(--textSecondary);
+  padding: 20px;
+}
+
+.fa-right-from-bracket:hover {
+  color: var(--text-color);
+}
+
+.logout-icon {
+  display: inline;
+}
+
+
+::selection {
+  background-color: #e2b714;
+  color: #333;
+}
