@@ -36,10 +36,11 @@ session_start();
           <div class="textButton first">random</div>
           <div class="textButton">@punctuation</div>
           <div class="textButton" onclick="(a==false) ? a = true: a = false;
+          a == false ? textColorO() :textColorY(  );
           newGame();
-
-          a==false ? textColorO() :textColorY();
-          " id="numbers">numbers</div>
+          // a = localStorage.getItem('a') === 'false' ? a = false : a = true
+          "
+           id = "numbers">numbers</div>
         </div>
       </div>
     </div>

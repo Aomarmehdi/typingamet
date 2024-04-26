@@ -57,10 +57,15 @@ function formatNumber(number) {
     a.style.color = "#666"
     
   }
-  
-  var a = false;
+  window.onload = () => {
+    a == false ? textColorO() :textColorY();
+
+  }
+  var a = localStorage.getItem("a") === "false" ? a = false : a = true
   function newGame() {
+    // a = localStorage.getItem("a")
     a == false ?localStorage.setItem("a", false): localStorage.setItem("a",true);
+    localStorage.getItem("a") === "false" ? a = false : a = true
     // a = localStorage.getItem("a");  
     console.log(a)
   document.getElementById("words").innerHTML = "";
