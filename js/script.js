@@ -4,11 +4,12 @@ const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const numberCoust = number.length; 
 document.querySelector(".content").style.opacity = 0;
 // console.log(paragraphs[0])
-document.querySelector(".time").addEventListener("click",function me (e)  {
-  // console.log(e.originalTarget.innerText);
+document.querySelector(".time").addEventListener("click", (e) => {
+  let a = document.querySelector(".time")
+  console.log(e.target.innerHTML);
   newGame()
-  document.querySelector("#info").innerHTML = e.originalTarget.innerText
-    localStorage.setItem("time" ,e.originalTarget.innerText)
+  document.querySelector("#info").innerHTML = e.target.innerHTML;
+    localStorage.setItem("time" ,e.target.innerHTML);
 })
 
 
@@ -45,11 +46,8 @@ function formatNumber(number) {
 
 }
 
-// document.querySelector(".mode").addEventListener("click", (e) => { 
-  //   a = true;
-  //   console.log(`the value of a is : ${a}`)
-  // })
-  
+
+
   function textColorY() {
     const a = document.getElementById("numbers")
     a.style.color = "#e2b714";
@@ -62,7 +60,9 @@ function formatNumber(number) {
   
   var a = false;
   function newGame() {
-  console.log(a)
+    a == false ?localStorage.setItem("a", false): localStorage.setItem("a",true);
+    // a = localStorage.getItem("a");  
+    console.log(a)
   document.getElementById("words").innerHTML = "";
   for (let i = 0; i < 200; i++) {
     document.getElementById("words").innerHTML += formatWord(randomWord());
@@ -128,8 +128,8 @@ function gameOver() {
   // console.log({result})
   document.getElementById("cursor").style.display = "none"
   document.getElementById('info').innerHTML = ` WPM:${result}`;
-  console.log(getMistakes());
-  console.log(getCpm());
+  // console.log(getMistakes());
+  // console.log(getCpm());
 }
 
 
