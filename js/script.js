@@ -147,8 +147,9 @@ document.querySelector(".content").style.opacity = 1;
 
 
 document.addEventListener('keydown', (ev) => {
-  document.querySelector("#modes").style.opacity = 0;
-  document.querySelector("#testConfig").style.opacity = 0;
+
+  document.querySelector("#modes").style.visibility = "hidden";
+  document.querySelector("#testConfig").style.visibility = "hidden";
   console.log(ev)
   const key = ev.key;
   const currentWord = document.querySelector(".word.current");
