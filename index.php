@@ -45,17 +45,18 @@ session_start();
           id = "numbers">numbers</div>
       </div>
     </div>
-
-    <div id="testConfig">
-      <div class="row">
-        <div class="time">
-          <div class="textButton" timeconfig="15"><span>15</span></div>
-          <div class="textButton" timeconfig="30"><span>30</span></div>
-          <div class="textButton" timeconfig="45"><span>45</span></div>
-          <div class="textButton last" timeconfig="60"><span>60</span></div>
-        </div>
+  </div>
+  
+  <div id="testConfig">
+    <div class="row">
+      <div class="time">
+        <div class="textButton" timeconfig="15"><span>15</span></div>
+        <div class="textButton" timeconfig="30"><span>30</span></div>
+        <div class="textButton" timeconfig="45"><span>45</span></div>
+        <div class="textButton last" timeconfig="60"><span>60</span></div>
       </div>
     </div>
+  </div>
 
   <main>
     <div id="header">
