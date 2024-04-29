@@ -1,5 +1,10 @@
 <?php 
 session_start();
+if(isset($_POST)) { 
+  $data = file_get_contents("php://input");
+  $user = json_decode($data, true);
+  echo $user;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,11 +41,16 @@ session_start();
     <div class="row">
       <div class="mode">
         <div class="textButton first">random</div>
-        <div class="textButton">@punctuation</div>
-        <div class="textButton" onclick="(a==false) ? a = true: a = false;
-        a == false ? textColorO() :textColorY(  );
+        <div class="textButton" id="punctuation" onclick="
+        (b==false) ? b = true: b = false;
+        b == false ? textColorPO() :textColorPY();
         newGame();
-        // a = localStorage.getItem('a') === 'false' ? a = false : a = true
+
+        ">@punctuation</div>
+        <div class="textButton" onclick="(a==false) ? a = true: a = false;
+        a == false ? textColorNO() :textColorNY();
+        newGame();
+        // a = localStorage.getItem(  'a') === 'false' ? a = false : a = true
         "
           id = "numbers">numbers</div>
       </div>
@@ -92,6 +102,16 @@ session_start();
       </li>
     </ul>
   </div>
+  <div class="mehdi"></div>
+  <script>
+    // const xhr = new XMLHttpRequest();
+//  a = "mehdi";
+    // xhr.open("POST", "save.php")
+    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // xhr.send(words);
+    // xhr.onload = function() {
+    // }
+  </script>
 
   <script src="./js/paragraph.js"></script>
   <script src=" ./js/script.js"></script>
