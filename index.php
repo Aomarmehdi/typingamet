@@ -29,7 +29,7 @@ if(isset($_POST)) {
       
         <a href="./statistics.php" id="stats">
           <?php if(isset($_SESSION['user_name'])) {?>
-            <div class="float-end"><a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a><a href="./statistics.php" class="username-db"><?= $_SESSION['user_name']?></a></div>
+            <div class="float-end"><a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a><a href="./statistics.php" class="username-dbusername-db"><?= $_SESSION['user_name']?></a></div>
             <?php } else {?>
             <a href="./signup/index.php"><i class="fa-regular fa-user fa-sm"></i></a>
             <?php }?>

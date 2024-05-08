@@ -129,7 +129,7 @@ div.word {
   height: 1.6rem;
   background: var(--yallow);
   position: fixed;
-  top: 325px;
+  top: 345px;
   animation: blink 1s infinite;
 }
 /* 
@@ -223,6 +223,10 @@ a {
 
 .textButton:hover {
   color: var(--text-color);
+}
+
+.first {
+  color: var(--yallow);
 }
 
 .row {
