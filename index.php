@@ -1,10 +1,12 @@
 <?php 
 session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 // if(isset($_POST)) { 
-  // $data = file_get_contents("php://input");
-  // echo $_SERVER["REQUEST_METHOD"];
-  // $user = $_GET["nom"];
-  // echo $user;
+  //   $data = file_get_contents("php://input");
+  //   echo $_SERVER["REQUEST_METHOD"];
+  //   $user = $_GET["nom"];
+  //   echo $user;
 
 
 // }
