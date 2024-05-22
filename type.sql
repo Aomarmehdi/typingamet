@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 22 mai 2024 à 11:58
+-- Généré le : mer. 22 mai 2024 à 12:26
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -83,6 +83,23 @@ INSERT INTO `joueur` (`id_joueur`, `user_name`, `email`, `password`) VALUES
 (73, 'nassim', 'nassim@gmail.com', '1234'),
 (74, 'nassim', 'nassim@gmail.com', '1234');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `test`
+--
+
+CREATE TABLE `test` (
+  `id_test` int(11) NOT NULL,
+  `id_joueur` int(11) NOT NULL,
+  `time` varchar(20) NOT NULL,
+  `mistakes` varchar(100) NOT NULL,
+  `wpm` varchar(100) NOT NULL,
+  `cpm` varchar(100) NOT NULL,
+  `mode_punctuation` tinyint(1) NOT NULL,
+  `mode_numbers` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Index pour les tables déchargées
 --
@@ -94,6 +111,13 @@ ALTER TABLE `joueur`
   ADD PRIMARY KEY (`id_joueur`);
 
 --
+-- Index pour la table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`id_test`),
+  ADD KEY `id_joueur` (`id_joueur`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -102,6 +126,22 @@ ALTER TABLE `joueur`
 --
 ALTER TABLE `joueur`
   MODIFY `id_joueur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
+--
+-- AUTO_INCREMENT pour la table `test`
+--
+ALTER TABLE `test`
+  MODIFY `id_test` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `test`
+--
+ALTER TABLE `test`
+  ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`id_joueur`) REFERENCES `joueur` (`id_joueur`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
