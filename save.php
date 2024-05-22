@@ -1,61 +1,35 @@
 <?php
 
-// Assuming you have already established a connection to your MySQL database
+  $data = json_decode(file_get_contents('php://input'), true); // Parse JSON data
+  $time = $data['time'];
+  $cpm = $data['cpm'];
+  $mistake = $data['mistake'];
+  $wpm = $data['wpm'];
+  $modePunctuation = $data['modePunctuation'];
+  $modeNumbers = $data['modeNumbers'];
 
-// Check if the request method is POST
-echo $_SERVER["REQUEST_METHOD"];
-echo "</br>";
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 
-    // Extract data fields
-    $name = $_GET['nom'];
-    echo $name;  
-    // $email = $data['email']; 
 
-    // Validate the data (you may add more validation)
-    if (!empty($name) && !empty($email)) {
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "type";
+$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+$query = "insert into test (time, cpm, mistakes, wpm, cpm, mode_punctuation, mode_numbers) values ('$time', '$cpm', '$mistakes', '$wpm', '$cpm', '$mode_punctuation', '$mode_numbers')";
+mysqli_query($con,$query);
 
-        // Prepare and execute the SQL query to insert data into the database
-        $sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $name, $email);
-
-        if ($stmt->execute()) {
-            // Data insertion successful
-            echo "Data saved successfully";
-        } else {
-            // Data insertion failed
-            echo "Error saving data";
-        }
-
-        // Close the prepared statement
-        $stmt->close();
-    } else {
-        // Invalid or incomplete data received
-        echo "Invalid data received";
-    }
-} else {
-    // Request method is not POST
-    echo "Only POST requests are allowed";
-}
 
 ?>
 
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
-    <script>
-
-    </script>
+  <h1>hello world</h1>
 </body>
-
 </html>

@@ -23,7 +23,14 @@ const paragraphs = [
 
 
 
-function randomWord() {
-  const randomIndex = Math.ceil(Math.random() * wordCoust);
-  return randomIndex === wordCoust ?words[randomIndex-1] : words[randomIndex];
-}
+// var mehd = "mehdi";
+// var xhttp = new XMLHttpRequest();
+
+// xhttp.onreadystatechange = function() {
+//   if (this.readyState == 4 && this.status == 200) {
+//     console.log(this.responseText);
+//   }
+// };
+
+// xhttp.open("GET", "http://localhost/typingamet/save.php?nom="+mehd, true)
+// xhttp.send();

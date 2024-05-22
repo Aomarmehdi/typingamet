@@ -1,10 +1,13 @@
 <?php 
 session_start();
-if(isset($_POST)) { 
-  $data = file_get_contents("php://input");
-  $user = json_decode($data, true);
-  echo $user;
-}
+// if(isset($_POST)) { 
+  // $data = file_get_contents("php://input");
+  // echo $_SERVER["REQUEST_METHOD"];
+  // $user = $_GET["nom"];
+  // echo $user;
+
+
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,17 +106,8 @@ if(isset($_POST)) {
     </ul>
   </div>
   <div class="mehdi"></div>
-  <script>
-    // const xhr = new XMLHttpRequest();
-//  a = "mehdi";
-    // xhr.open("POST", "save.php")
-    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // xhr.send(words);
-    // xhr.onload = function() {
-    // }
-  </script>
-
-  <script src="./js/paragraph.js"></script>
+    
+  <script src="./js/sendData.js"></script>
   <script src=" ./js/script.js"></script>
   </body>
 </html>

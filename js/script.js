@@ -218,7 +218,7 @@ function getWpm() {
   const typedWords = words.slice(0, lastTypedWordIndex);
   const correctWords = typedWords.filter(word => {
     const letters = [...word.children];
-    // console.log(`mehdi${letters}`)
+    // console.log(`me${letters}`)
     const incorrectLetters = letters.filter(letter => letter.className.includes('incorrect'));
     const correctLetters = letters.filter(letter => letter.className.includes('correct'));
     return incorrectLetters.length === 0 && correctLetters.length === letters.length;
@@ -239,21 +239,43 @@ document.querySelector(".content").style.opacity = 1;
   document.querySelector(".mistake").lastElementChild.innerHTML = getMistakes();
   document.querySelector("#wpm").lastElementChild.innerHTML = result
   document.querySelector(".cpm").lastElementChild.innerHTML = getCpm();
+  let username = document.getElementsByClassName("username-db");
+  console.log(username[0].textContent.trim());
+  if(username[0].textContent.trim()){
+    var data = { 
+      time : localStorage.getItem("time") ,
+      cpm : getCpm(),
+      mistake : getMistakes(),
+      wpm : getWpm(),
+      modePunctuation : localStorage.getItem("b"),
+      modeNumbers : localStorage.getItem("a")
+    }
+    var xhttp = new XMLHttpRequest ;
+    xhttp.open("POST", "/typingamet/save.php", true);
+    xhttp.setRequestHeader("content-Type", "application/json");
+    xhttp.send(JSON.stringify(data));
+    
+    console.log(`the time of game is: ${data.time}`)
+    console.log(`cpm: ${data.cpm}`)
+    console.log(`mistake: ${data.mistake}`)
+    console.log(`wpm: ${data.wpm}`)
+    console.log(`mode punctuation is: ${data.modePunctuation}`)
+    console.log(`mode numbers is: ${data.modeNumbers}`)
+  }
   // var user = {
-  //   "cpm" : getCpm(),
-  //   "mistake" : getMistakes(),
-  //   "wpm" : getWpm()
-  // }
-  
-  // console.log(getCpm());
-}
-// var user = "mehdi";
+    //   "cpm" : getCpm(),
+    //   "mistake" : getMistakes(),
+    //   "wpm" : getWpm()
+    // }
+    
+    // console.log(getCpm());
+  }
 
 
 document.addEventListener('keydown', (ev) => {
 
-  document.querySelector("#modes").style.visibility = "hidden";
-  document.querySelector("#testConfig").style.visibility = "hidden";
+  // document.querySelector("#modes").style.visibility = "hidden";
+  document.querySelector("#testConfig").style.visibility =  "hidden";
   console.log(ev)
   const key = ev.key;
   const currentWord = document.querySelector(".word.current");
@@ -427,7 +449,7 @@ const typingText = document.querySelector(".typing-text")
 function randomParagraph() {
   console.log(paragraphs[0]);
 }
-let mehdi = "mehdi";
+// let mehdi = "mehdi";
 
 // var xhr = new XMLHttpRequest();
 // xhr.open("POST", "save.php", true);
@@ -443,35 +465,64 @@ let mehdi = "mehdi";
 // xhr.send(data)
 // console.log(xhr);
 
-// var mehd = "aouragh Omar mehdi";
-// var xhttp = new XMLHttpRequest();
 
-// xhttp.onreadystatechange = function() {
-//   if (this.readyState == 4 && this.status == 200) {
-//     console.log(this.responseText);
-//   }
+
+var data = {
+  name : "nassim",
+  email : "nassim@gmail.com",
+  password : "1234"
+}
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", "/typingamet/save.php", true); 
+  xhttp .setRequestHeader("Content-Type", "application/json"); 
+
+
+xhttp.send(JSON.stringify(data));
+
+
+
+
+// Collect data
+// const data = {
+//   name: "mehdi",
+//   email: "mehdi@gmail.com"
 // };
 
-// xhttp.open("GET", "http://localhost/typingamet/save.php?="+mehd)
-// xhttp.send();
-// Collect data
-const data = {
-  name: "mehdi",
-  email: "mehdi@gmail.com"
-};
-
 // Encode data as URL parameters
-const params = new URLSearchParams(data);
-var mehd = 'mehdi';
-// Send data to server using GET method
-fetch('/index.php?nom='+mehd)
-  .then(response => {
-    if (response.ok) {
-      console.log('Data sent successfully');
-    } else {
-      console.error('Failed to send data');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+// const params = new URLSearchParams(data);
+// var mehd = 'mehdi';
+// // Send data to server using GET method
+// fetch('typingamet/index.php?nom='+mehd)
+//   .then(response => {
+//     if (response.ok) {
+//       console.log('Data sent successfully');
+//     } else {
+//       console.error('Failed to send data');
+//     }
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+
+//   });
+// const data = {  // Prepare data object (modify for your database structure)
+//   name: "aouragh omar mehdi",
+//   email: "mehdi2.@gmail.com",
+//   password: "mehdi"
+// };
+
+// fetch("/typingamet/save.php", {
+//   method: "POST",
+//   body: JSON.stringify(data),
+//   headers: { "Content-Type": "application/json" },
+// })
+//   .then((response) => {
+//     if (response.ok) {
+//       console.log("Data sent successfully");
+//       // Optionally handle successful data sending (e.g., clear form)
+//     } else {
+//       console.error("Failed to send data");
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Error:", error);
+//   });
