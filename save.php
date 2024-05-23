@@ -1,24 +1,49 @@
 <?php
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL); 
 
+  include("signup/connection.php");
+
+  session_start();
+  $a = $_SESSION['user_id'];
+
+  
   $data = json_decode(file_get_contents('php://input'), true); // Parse JSON data
-  $time = $data['time'];
+  $time= $data['time'];
   $cpm = $data['cpm'];
   $mistake = $data['mistake'];
   $wpm = $data['wpm'];
   $modePunctuation = $data['modePunctuation'];
   $modeNumbers = $data['modeNumbers'];
 
+// $_SESSION['time'] = $time;
 
 
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "type";
-$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-$query = "insert into test (time, cpm, mistakes, wpm, cpm, mode_punctuation, mode_numbers) values ('$time', '$cpm', '$mistakes', '$wpm', '$cpm', '$mode_punctuation', '$mode_numbers')";
+
+  // $data = json_decode(file_get_contents('php://input'), true); // Parse JSON data
+  // $time = $data['name'];
+  // $cpm = $data['email'];
+  // $mistake = $data['password'];
+//   $query = "select max(id_test) from test where id_joueur = '$a' ";
+//   $result = mysqli_query($con, $query);
+//   $id_test = mysqli_fetch_assoc($result);
+//   if ($id_test['max(id_test)'])  {
+// $id_test = $id_test['max(id_test)'] + 1;
+//   }else {
+//     $id_test = $id_test['max(id_test)'] +1;
+//     // $_SESSION['id_test'] = $id_test;
+//   }
+
+// print_r( empty($id_test['max(id_test)']));
+    // $_SESSION['id_test'] = $id_test;
+    // echo($_SESSION['id_test']);
+
+
+
+$query = "insert into test(id_joueur, time, mistakes, wpm, cpm, mode_punctuation, mode_numbers) values ( '$a', '$time', '$mistake', '$wpm', '$cpm', '$modePunctuation', ' $modeNumbers')";
+// $query = "insert into joueur(user_name, email, password) values ('$time', '$cpm', '$mistakes')";
 mysqli_query($con,$query);
-
 
 ?>
 
