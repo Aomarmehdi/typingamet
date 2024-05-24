@@ -31,12 +31,11 @@ error_reporting(E_ALL);
       <h1 class="text">TYPINGAME</h1>
     </a>
     <div class="username-db">
-      
         <a href="./statistics.php" id="stats">
           <?php if(isset($_SESSION['user_name'])) {?>
-            <div class="float-end"><a href="./logout.php"><i class="fa-solid fa-right-from-bracket"></i></a><a href="./statistics.php" class="username-dbusername-db"><?= $_SESSION['user_name']?></a></div>
+            <div class="float-end"><a href="./logout.php" title="sign out"><i class="fa-solid fa-right-from-bracket"></i></a><a href="./statistics.php" class="username-dbusername-db"><?= $_SESSION['user_name']?></a></div>
             <?php } else {?>
-            <a href="./signup/index.php"><i class="fa-regular fa-user fa-sm"></i></a>
+            <a href="./signup/index.php" title="sign up/in"><i class="fa-regular fa-user fa-sm"></i></a>
             <?php }?>
         </a>
     </div>
@@ -50,7 +49,6 @@ error_reporting(E_ALL);
         (b==false) ? b = true: b = false;
         b == false ? textColorPO() :textColorPY();
         newGame();
-
         ">@punctuation</div>
         <div class="textButton" onclick="(a==false) ? a = true: a = false;
         a == false ? textColorNO() :textColorNY();

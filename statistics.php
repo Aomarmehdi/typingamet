@@ -34,24 +34,6 @@ $a= 0 ;
   <title><?=$r = $_SESSION['user_name'];?>'s Stats</title>
 </head>
 
-<style>
-       table thead tr td {
-        border: solid 2px;
-      }
-      table tbody tr td {
-        border: solid 2px;
-      }
-      th {
-        border: solid 2px;
-      }
-      table {
-        margin: 150px 500px;
-      }
-
-
-</style>
-
-
 <body>
   <header>
     <a href="./index.php" class="aa">
@@ -65,12 +47,13 @@ $a= 0 ;
   <table>
     <thead>
       <tr>
-        <th>game</th>
-        <th>time</th>
-        <th>mistake</th>
-        <th>wpm</th>
-        <th>cpm</th>
-        <th>mode</th>
+        <th>Test</th>
+        <th>Time</th>
+        <th>Mistakes</th>
+        <th>WPM</th>
+        <th>CPM</th>
+        <th>Mode Punctuation</th>
+        <th>Mode Numbers</th>
       </tr>
     </thead>
     <tbody>
@@ -89,13 +72,13 @@ $a= 0 ;
           <td><?php 
           // echo $data['7'];
           if ($data['6'] === "true" && $data['7'] !== "false")
-          echo "punctuation and numbers";
-        else {
-          if ($data['6'] == "true"){
-          echo "punctuation";}
-              if ($data['7'] != "false"){
-              echo "numbers";}
-        }
+            echo "punctuation and numbers";
+          else {
+            if ($data['6'] == "true") {
+              echo "punctuation";}
+            if ($data['7'] != "false"){
+            echo "numbers";}
+          }
         ?></td>
           
       </tr>

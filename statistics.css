@@ -96,3 +96,16 @@ header {
   background-color: #e2b714;
   color: #333;
 }
+
+
+table {
+  margin: 20px auto;
+  text-align: center;
+}
+
+table, th, td {
+  color: var(--text-color);
+  border: solid 1px gray;
+  border-collapse: collapse;
+  padding: 10px;
+}

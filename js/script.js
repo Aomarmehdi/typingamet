@@ -306,7 +306,7 @@ function gameOver() {
 }
 
 document.addEventListener("keydown", (ev) => {
-  // document.querySelector("#modes").style.visibility = "hidden";
+  document.querySelector("#modes").style.visibility = "hidden";
   document.querySelector("#testConfig").style.visibility = "hidden";
   console.log(ev);
   const key = ev.key;

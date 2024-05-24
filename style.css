@@ -328,7 +328,13 @@ a {
   color: var(--text-color);
 }
 
+.username-dbusername-db {
+  color: var(--textSecondary);
+}
 
+.username-dbusername-db:hover {
+  color: var(--text-color);
+}
 
 
 
