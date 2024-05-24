@@ -13,7 +13,7 @@
   $result = mysqli_query($con, $query);
   if($result) {
     $user_data = mysqli_fetch_all($result);
-    print_r($user_data) ;  
+    // print_r($user_data) ;    
 
   }
   
@@ -71,15 +71,18 @@ $a= 0 ;
           <td><?php echo $data['5']?></td>
           <td><?php 
           // echo $data['7'];
-          if ($data['6'] === "true" && $data['7'] !== "false")
-            echo "punctuation and numbers";
-          else {
-            if ($data['6'] == "true") {
-              echo "punctuation";}
-            if ($data['7'] != "false"){
-            echo "numbers";}
-          }
+
+          echo  $data['6'];
+          // if ($data['6'] === "true" && $data['7'] !== "false")
+          //   echo "punctuation and numbers";
+          // else {
+          //   if ($data['6'] == "true") {
+          //     echo "punctuation";}
+          //   if ($data['7'] != "false"){
+          //   echo "numbers";}
+          // }
         ?></td>
+        <td><?php echo $data['7']?></td>
           
       </tr>
       <?php } ?>
@@ -88,4 +91,4 @@ $a= 0 ;
   </table>
   
 </body>
-</html>
+</html> 
