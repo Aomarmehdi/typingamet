@@ -47,6 +47,7 @@ $a= 0 ;
   <table>
     <thead>
       <tr>
+        <th>joueur id</th>
         <th>Test</th>
         <th>Time</th>
         <th>Mistakes</th>
@@ -58,9 +59,12 @@ $a= 0 ;
     </thead>
     <tbody>
       <?php
-      
       foreach($user_data as $aa=> $data) {?>
         <tr>
+          <td><?php 
+// $user_id = $_SESSION['user_id'];
+echo $user_id;
+?></td>
           <td><?php 
           if ( $a < count($user_data)) {
             $a += 1;

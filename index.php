@@ -105,8 +105,20 @@ error_reporting(E_ALL);
       </li>
     </ul>
   </div>
-  <div class="mehdi"></div>
-    
+  <style>
+    .contact {
+      display: flex;
+    }
+    .contact {
+      justify-content: center;
+      align-items:flex-end;
+      color: #d1d0c5;
+    }
+  </style>
+  <div class="contact">
+    <p>contact us: omarmehdi.aouragh@univ-bba.dz
+  nassimouldamer@univ-bba.dz</p>
+  </div>
   <script src="./js/sendData.js"></script>
   <script src=" ./js/script.js"></script>
   </body>
