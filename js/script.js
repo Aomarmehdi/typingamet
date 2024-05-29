@@ -289,20 +289,13 @@ function gameOver() {
     };
     xhttp.send(JSON.stringify(data));
 
-    console.log(`the time of game is: ${data.time}`);
-    console.log(`cpm: ${data.cpm}`);
-    console.log(`mistake: ${data.mistake}`);
-    console.log(`wpm: ${data.wpm}`);
-    console.log(`mode punctuation is: ${data.modePunctuation}`);
-    console.log(`mode numbers is: ${data.modeNumbers}`);
+    // console.log(`the time of game is: ${data.time}`);
+    // console.log(`cpm: ${data.cpm}`);
+    // console.log(`mistake: ${data.mistake}`);
+    // console.log(`wpm: ${data.wpm}`);
+    // console.log(`mode punctuation is: ${data.modePunctuation}`);
+    // console.log(`mode numbers is: ${data.modeNumbers}`);
   }
-  // var user = {
-  //   "cpm" : getCpm(),
-  //   "mistake" : getMistakes(),
-  //   "wpm" : getWpm()
-  // }
-
-  // console.log(getCpm());
 }
 
 document.addEventListener("keydown", (ev) => {

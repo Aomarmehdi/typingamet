@@ -2,14 +2,6 @@
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-// if(isset($_POST)) { 
-  //   $data = file_get_contents("php://input");
-  //   echo $_SERVER["REQUEST_METHOD"];
-  //   $user = $_GET["nom"];
-  //   echo $user;
-
-
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,10 +55,10 @@ error_reporting(E_ALL);
   <div id="testConfig">
     <div class="row">
       <div class="time">
-        <div class="textButton" timeconfig="15"><span>15</span></div>
-        <div class="textButton" timeconfig="30"><span>30</span></div>
-        <div class="textButton" timeconfig="45"><span>45</span></div>
-        <div class="textButton last" timeconfig="60"><span>60</span></div>
+        <div class="textButton" ><span>15</span></div>
+        <div class="textButton" ><span>30</span></div>
+        <div class="textButton" ><span>45</span></div>
+        <div class="textButton last" ><span>60</span></div>
       </div>
     </div>
   </div>
@@ -104,20 +96,6 @@ error_reporting(E_ALL);
         <span>0</span>
       </li>
     </ul>
-  </div>
-  <style>
-    .contact {
-      display: flex;
-    }
-    .contact {
-      justify-content: center;
-      align-items:flex-end;
-      color: #d1d0c5;
-    }
-  </style>
-  <div class="contact">
-    <p>contact us: omarmehdi.aouragh@univ-bba.dz
-  nassimouldamer@univ-bba.dz</p>
   </div>
   <script src="./js/sendData.js"></script>
   <script src=" ./js/script.js"></script>

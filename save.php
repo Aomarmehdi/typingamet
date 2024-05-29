@@ -45,16 +45,3 @@ $query = "insert into test(id_joueur, time, mistakes, wpm, cpm, mode_punctuation
 // $query = "insert into joueur(user_name, email, password) values ('$time', '$cpm', '$mistakes')";
 mysqli_query($con,$query);
 
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>hello world</h1>
-</body>
-</html>
